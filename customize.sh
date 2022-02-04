@@ -1,7 +1,6 @@
 
 apitest() 
 {
-	pm install --dont-kill "$MODPATH/system/priv-app/GmsCore/com.google.android.gms.apk"
     return expr 30 - $API
 }
 
