@@ -4,16 +4,16 @@
 
 module structure:
 #### /system/app:
-- GsmCore
-- Google Calendar Sync
-- Google Contact Sync
 - Nomination Network Location Provider
 - Radiocell Network Location Provider
 
 #### /system/priv-app:
 - DroidGuard
+- GsmCore
+- Google Calendar Sync
+- Google Contact Sync
 - Google PlayStore
-- Gogle Service Framework Proxy
+- Google Service Framework Proxy
 
 #### /system/framework:
 - maps.jar
