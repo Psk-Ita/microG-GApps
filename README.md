@@ -4,14 +4,13 @@
 
 module structure:
 #### /system/app:
+- DAVx5 Sync Provider for contacts and calendar
 - Nomination Network Location Provider
-- Radiocell Network Location Provider
+- SpotComms Network Location Provider
 
 #### /system/priv-app:
-- DroidGuard
 - GsmCore
-- Google Calendar Sync
-- Google Contact Sync
+- DroidGuard
 - Google PlayStore
 - Google Service Framework Proxy
 
@@ -32,7 +31,6 @@ supported feature [list](https://github.com/microg/android_packages_apps_GmsCore
 
 ## Installation
 once flashed the module, system reboot then:
-- manually add sync services grants
 - configure microG
 - add your google account
 - Enjoy!
