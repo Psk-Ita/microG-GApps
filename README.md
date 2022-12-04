@@ -38,3 +38,5 @@ once flashed the module, system reboot then:
 ## Credits
 - **microG project** for their awesome work.
 
+## Download
+get latest build directly from <a href="https://github.com/Psk-Ita/microG-GApps/releases/latest">here</a>
