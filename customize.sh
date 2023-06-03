@@ -23,10 +23,10 @@ fi
 chmod 777 $curl
 
 mkdir "$MODPATH/system/priv-app/GoogleServicesCore"
-echo downloading Services Core from microG (could take a while)...
+echo downloading Services Core from microG...
 $curl -o "$MODPATH/system/priv-app/GoogleServicesCore/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gms-231657056.apk"
 
 mkdir "$MODPATH/system/priv-app/ServicesFrameworkProxy"
-echo downloading Services Framework from microG
+echo downloading Services Framework from microG...
 $curl -o "$MODPATH/system/priv-app/ServicesFrameworkProxy/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gsf-8.apk"
 
