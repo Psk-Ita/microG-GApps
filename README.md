@@ -3,13 +3,12 @@
 **Summary**: This repo contains microG build assets ([source](https://microg.org/download.html)), it is based on latest stable release "com.google.android.gms **v0.2.28.231657**". 
 
 module structure:
-#### /system/app:
+#### /system/priv-app:
+- microG Services Core (microG)
+- microG Service Framework (proxy for microG)
+- Google PlayStore
 - Google Calendar Sync
 - Google Contacts Sync
-#### /system/priv-app:
-- Google Services Core (microG)
-- Google Service Framework (proxy for microG)
-- Google PlayStore
 
 #### /system/framework:
 - maps.jar

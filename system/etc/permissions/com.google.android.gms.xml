@@ -1,5 +1,4 @@
 <permissions>
-
 	<privapp-permissions package="com.google.android.gms">
 		<permission name="android.permission.BLUETOOTH"/>
 		<permission name="android.permission.BLUETOOTH_ADMIN"/>
