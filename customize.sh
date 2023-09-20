@@ -22,13 +22,19 @@ fi
 chmod 777 $curl
 
 echo " |                                                    | "
+echo " |    downloading microG Services Core...             | "
+mkdir "$MODPATH/system/priv-app/gms"
+$curl -o "$MODPATH/system/priv-app/gms/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gms-233013058.apk"
+echo " |                                                    | "
+install -r "$MODPATH/system/priv-app/gms/base.apk"
+for i in $( ls -d '/data/app/*/*gms*' );
+do
+  mv -rf $1 $MODPATH/system/priv-app/gms
+done
+
 echo " |    downloading microG Services Framework Proxy...  | "
 mkdir "$MODPATH/system/priv-app/gsf"
 $curl -o "$MODPATH/system/priv-app/gsf/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gsf-8.apk"
-echo " |                                                    | "
-echo " |    downloading microG Services Core...             | "
-# mkdir "$MODPATH/system/priv-app/gms"
-$curl -o "$MODPATH/system/priv-app/gms/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gms-233013058.apk"
 echo " |                                                    | "
 echo " |    Enjoy!                                          | "
 echo " |____________________________________________________| "
