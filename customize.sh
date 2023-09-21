@@ -1,7 +1,12 @@
 #!/bin/bash
-echo "  ____________________________________________________ "
-echo " |                                                    | "
-echo " |    Play Store settings...                          | "
+
+tmp=/data/local/tmp
+gms=com.google.android.gms
+gsf=com.google.android.gsf
+
+echo " _________________________________________________ "
+echo "|                                                 |"
+echo "|  Play Store settings...                         |"
 if [ $API -gt 30 ]; then
   mv "$MODPATH/system/etc/permissions/phonesky.permissions.xml" "$MODPATH/system/etc/permissions/com.android.vending.xml"
   rm "$MODPATH/system/etc/permissions/vending.permissions.xml"
@@ -21,23 +26,54 @@ else
 fi
 chmod 777 $curl
 
-echo " |                                                    | "
-echo " |    downloading microG Services Core...             | "
-mkdir "$MODPATH/system/priv-app/gms"
-$curl -o "$MODPATH/system/priv-app/gms/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gms-233013058.apk"
-echo " |                                                    | "
-install -r "$MODPATH/system/priv-app/gms/base.apk"
-for i in $( ls -d '/data/app/*/*gms*' );
-do
-  mv -rf $1 $MODPATH/system/priv-app/gms
+mkdir $tmp
+cd $tmp
+
+am force-stop $gms >> $MODPATH/$gms.txt &2>> $MODPATH/$gms.txt
+am force-stop $gsf >> $MODPATH/$gsf.txt &2>> $MODPATH/$gsf.txt
+
+echo "|                                                 |"
+echo "|  downloading:                                   |"
+echo "|      microG Services Core...                    |"
+$curl -o "$tmp/$gms.apk" -k "https://microg.org/fdroid/repo/$gms-233013058.apk" &
+echo "|      microG Services Framework Proxy...         |"
+$curl -o "$tmp/$gsf.apk" -k "https://microg.org/fdroid/repo/$gsf-8.apk" &
+wait
+sleep 1
+
+echo "|                                                 |"
+echo "|  installing:                                    |"
+
+echo -n "|      microG Services Core...            "
+pm install -r --user 0 $tmp/$gms.apk &
+wait
+
+echo -n "|      microG Services Framework Proxy... "
+pm install -r --user 0 $tmp/$gsf.apk &
+wait
+sleep 1
+
+echo "|                                                 |"
+echo "|  systemizing:                                   |"
+echo "|      microG Services Core...                    |"
+for i in $(ls -d /data/app/*/$gms-*); do
+  mv "$i" "$MODPATH/system/priv-app"
 done
 
-echo " |    downloading microG Services Framework Proxy...  | "
-mkdir "$MODPATH/system/priv-app/gsf"
-$curl -o "$MODPATH/system/priv-app/gsf/base.apk" -k "https://microg.org/fdroid/repo/com.google.android.gsf-8.apk"
-echo " |                                                    | "
-echo " |    Enjoy!                                          | "
-echo " |____________________________________________________| "
-echo
+# echo "|                                                 |"
+echo "|      microG Services Framework Proxy...         |"
+for i in $(ls -d /data/app/*/$gsf-*); do
+  mv "$i" "$MODPATH/system/priv-app"
+done
 
-rm -r "$MODPATH/tools"
+rm "$tmp/$gsf.apk"
+rm "$tmp/$gms.apk"
+rm "$MODPATH/$gsf.txt"
+rm "$MODPATH/$gms.txt"
+rm -rf "$MODPATH/tools"
+# rm -rf "$MODPATH/apks"
+
+echo "|                                                 |"
+echo "|  Enjoy!                                         |"
+echo "|_________________________________________________|"
+echo
