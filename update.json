@@ -1,5 +1,6 @@
 {
     "version": "v0.2.29.233013",
     "versionCode": 0.2.29.233013,
-    "zipUrl":"https://github.com/Psk-Ita/microG-GApps/releases/download/v0.2.29.233013/microG-GApps.v0.2.29.233013.zip"
+    "zipUrl":"https://github.com/Psk-Ita/microG-GApps/releases/download/v0.2.29.233013/microG-GApps.v0.2.29.233013.zip",
+    "changelog":"https://raw.githubusercontent.com/Psk-Ita/microG-GApps/master/README.md"
 }
