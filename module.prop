@@ -4,4 +4,4 @@ version=v0.2.29.233013
 versionCode=29
 author=Psk.It
 description=microG, Playstore, Calendar Sync, Contacts Sync 
-updateJson=https://raw.githubusercontent.com/Psk-Ita/microG-GApps/main/update.json
+updateJson=https://raw.githubusercontent.com/Psk-Ita/microG-GApps/master/tools/update.json
