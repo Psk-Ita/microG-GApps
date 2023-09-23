@@ -78,11 +78,11 @@ echo "    Systemizing...                                 "
 cd /data/app/
 
 for i in $(ls -d /data/app/*/$gms-*); do
-  mv $i $MODPATH/system/priv-app/microG.ServicesCore
+  cp -R $i $MODPATH/system/priv-app/microG.ServicesCore
 done
 
 for i in $(ls -d /data/app/*/$gsf-*); do
-  mv $i $MODPATH/system/priv-app/microG.FrameworkProxy
+  cp -R $i $MODPATH/system/priv-app/microG.FrameworkProxy
 done
 
 echo "                                                   "
