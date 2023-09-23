@@ -95,6 +95,7 @@ rm "$tmp/$gsf.apk"
 rm "$tmp/$gms.apk"
 
 echo "                                                   "
-echo "   Enjoy!                                          "
 echo " _________________________________________________ "
+echo "                                                   "
+echo "  Enjoy!                                           "
 echo
