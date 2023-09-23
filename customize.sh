@@ -93,6 +93,9 @@ rm "$MODPATH/$gms.txt"
 rm "$tmp/$gsf.apk"
 rm "$tmp/$gms.apk"
 
+pm uninstall $gsf
+pm uninstall $gms
+
 echo "                                                   "
 echo " _________________________________________________ "
 echo "                                                   "
