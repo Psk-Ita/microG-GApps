@@ -90,9 +90,6 @@ rm "$MODPATH/$gsf.txt"
 rm "$MODPATH/$gms.txt"
 rm -rf "$MODPATH/tools"
 
-pm uninstall --user 0 $gsf
-pm uninstall --user 0 $gms
-
 echo "                                                   "
 echo "   Enjoy!                                          "
 echo " _________________________________________________ "
