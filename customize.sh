@@ -78,16 +78,15 @@ echo "    Systemizing...                                 "
 cd /data/app/
 
 for i in $(ls -d /data/app/*/$gms-*); do
-  cp -R $i $MODPATH/system/priv-app/microG.ServicesCore
+  mv $i $MODPATH/system/priv-app/microG.ServicesCore
 done
 
 for i in $(ls -d /data/app/*/$gsf-*); do
-  cp -R $i $MODPATH/system/priv-app/microG.FrameworkProxy
+  mv $i $MODPATH/system/priv-app/microG.FrameworkProxy
 done
 
 echo "                                                   "
 echo "    Cleaning...                                    "
-
 rm -rf "$MODPATH/tools"
 rm "$MODPATH/$gsf.txt"
 rm "$MODPATH/$gms.txt"
