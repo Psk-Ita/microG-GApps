@@ -88,14 +88,16 @@ done
 echo "                                                   "
 echo "    Cleaning...                                    "
 
-pm uninstall $gms >> $MODPATH/$gms.txt &2>> $MODPATH/$gms.txt
-pm uninstall $gsf >> $MODPATH/$gsf.txt &2>> $MODPATH/$gsf.txt
+rm -rf "$MODPATH/tools" &
+rm "$MODPATH/$gsf.txt" &
+rm "$MODPATH/$gms.txt" &
+rm "$tmp/$gsf.apk" &
+rm "$tmp/$gms.apk" &
 
-rm -rf "$MODPATH/tools"
-rm "$MODPATH/$gsf.txt"
-rm "$MODPATH/$gms.txt"
-rm "$tmp/$gsf.apk"
-rm "$tmp/$gms.apk"
+pm uninstall $gsf &
+pm uninstall $gms &
+
+wait
 
 echo "                                                   "
 echo "   Enjoy!                                          "
